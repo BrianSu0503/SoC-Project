@@ -1,0 +1,863 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version U-2022.12 for linux64 - Nov 22, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Initializing gui preferences from file  /home/raid7_2/user12/r2921075/.synopsys_dc_gui/preferences.tcl
+sh rm -rf ./$TOP_DIR
+sh rm -rf ./$RPT_DIR
+sh rm -rf ./$NET_DIR
+sh mkdir ./$TOP_DIR
+sh mkdir ./$RPT_DIR
+sh mkdir ./$NET_DIR
+define_design_lib $TOPLEVEL -path ./$TOPLEVEL
+1
+#Read Design File (add your files here)
+analyze -library $TOPLEVEL -format verilog $verilog_files
+Running PRESTO HDLC
+Compiling source file ../rtl/FIR.v
+Warning:  ../rtl/FIR.v:193: the undeclared symbol 'in_stall' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../rtl/FIR.v:194: the undeclared symbol 'out_stall' assumed to have the default net type, which is 'wire'. (VER-936)
+Presto compilation completed successfully.
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb'
+1
+elaborate $TOPLEVEL -architecture verilog -library $TOPLEVEL
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
+  Loading link library 'slow'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ../rtl/FIR.v:242: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/FIR.v:241: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/FIR.v:248: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/FIR.v:253: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/FIR.v:257: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/FIR.v:261: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/FIR.v:268: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/FIR.v:272: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/FIR.v:602: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../rtl/FIR.v:650: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+
+Statistics for case statements in always block at line 196 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           197            |    auto/auto     |
+===============================================
+Warning:  ../rtl/FIR.v:248: Out of bounds bit select config_reg_w[64], valid bounds are [0:63]. (ELAB-312)
+Warning:  ../rtl/FIR.v:248: Out of bounds bit select config_reg_r[64], valid bounds are [0:63]. (ELAB-312)
+Warning:  ../rtl/FIR.v:253: Out of bounds bit select config_reg_w[64], valid bounds are [0:63]. (ELAB-312)
+Warning:  ../rtl/FIR.v:253: Out of bounds bit select config_reg_r[64], valid bounds are [0:63]. (ELAB-312)
+Warning:  ../rtl/FIR.v:257: Out of bounds bit select config_reg_w[64], valid bounds are [0:63]. (ELAB-312)
+Warning:  ../rtl/FIR.v:257: Out of bounds bit select config_reg_r[64], valid bounds are [0:63]. (ELAB-312)
+Warning:  ../rtl/FIR.v:261: Out of bounds bit select config_reg_w[64], valid bounds are [0:63]. (ELAB-312)
+Warning:  ../rtl/FIR.v:261: Out of bounds bit select config_reg_r[64], valid bounds are [0:63]. (ELAB-312)
+
+Statistics for case statements in always block at line 238 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           239            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 277 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           278            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 301 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           302            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 318 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           319            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 325 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           326            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 350 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           351            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 359 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           360            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 370 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           371            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 382 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           383            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 408 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           409            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 425 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           426            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 451 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           452            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 461 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           462            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 497 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           498            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 524 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           525            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 530 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           531            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 549 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           550            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 585 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           586            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 594 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           595            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 616 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           617            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 627 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           628            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 642 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           643            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 655 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           656            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 682 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           683            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 721 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           722            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 796 in file
+	'../rtl/FIR.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           797            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine FIR line 222 in file
+		'../rtl/FIR.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    ap_state_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine FIR line 238 in file
+		'../rtl/FIR.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|  config_reg_w_reg   | Latch | 2016  |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine FIR line 266 in file
+		'../rtl/FIR.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  config_reg_r_reg   | Flip-flop | 2015  |  Y  | N  | Y  | N  | N  | N  | N  |
+|  config_reg_r_reg   | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine FIR line 332 in file
+		'../rtl/FIR.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|  dc_read_cnt_r_reg   | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+| dc_written_cnt_r_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     dc_state_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| dc_read_cycle_r_reg  | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine FIR line 390 in file
+		'../rtl/FIR.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+| dataRAM_read_cnt_r_reg | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  data_reuse_buf_r_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|         m_reg          | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+	in routine FIR line 444 in file
+		'../rtl/FIR.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        k_reg        | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine FIR line 480 in file
+		'../rtl/FIR.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   input_buf_r_reg   | Flip-flop |  33   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine FIR line 506 in file
+		'../rtl/FIR.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    awaddr_r_reg     | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    tap_we_r_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine FIR line 578 in file
+		'../rtl/FIR.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    cal_state_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine FIR line 607 in file
+		'../rtl/FIR.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| pipelined_mul_r1_reg | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine FIR line 667 in file
+		'../rtl/FIR.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|  accum_in_cnt_r_reg  | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+| accum_out_cnt_r_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| pipelined_add_r1_reg | Flip-flop |  65   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine FIR line 731 in file
+		'../rtl/FIR.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+|     out_buffer_r_reg      | Flip-flop |  33   |  Y  | N  | Y  | N  | N  | N  | N  |
+| stream_out_data_cnt_r_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+=====================================================================================
+
+Inferred memory devices in process
+	in routine FIR line 773 in file
+		'../rtl/FIR.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    rready_r_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   read_addr_r_reg   | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    awready_r_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    wready_r_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    arready_r_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    rvalid_r_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|     FIR/494      |   64   |   32    |      6       |
+|     FIR/765      |   64   |   32    |      6       |
+======================================================
+Information:  Complex logic will not be considered for set/reset inference. (ELAB-2008)
+Presto compilation completed successfully. (FIR)
+Elaborated 1 design.
+Current design is now 'FIR'.
+1
+uniquify
+1
+current_design $TOPLEVEL
+Current design is 'FIR'.
+{FIR}
+link    
+
+  Linking design 'FIR'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  FIR                         /home/raid7_2/user12/r2921075/HLS_SOC/Lab3_fir/syn/FIR.db
+  slow (library)              /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb
+
+1
+source -echo $sdc_files
+# operating conditions and boundary conditions #
+#clock period defined by designer
+set cycle  5        
+create_clock -period $cycle [get_ports  axis_clk]
+set_dont_touch_network      [all_clocks]
+set_fix_hold                [all_clocks]
+set_clock_uncertainty  0.1  [all_clocks]
+set_clock_latency      0.5  [all_clocks]
+set_ideal_network           [get_ports axis_clk]
+#Don't touch the basic env setting as below
+set_input_delay  1     -clock axis_clk [remove_from_collection [all_inputs] [get_ports axis_clk]]
+set_output_delay 1     -clock axis_clk [all_outputs] 
+set_load         1     [all_outputs]
+set_drive        1     [all_inputs]
+set_operating_conditions -max_library slow -max slow                      
+Using operating conditions 'slow' found in library 'slow'.
+set_max_fanout 6 [all_inputs]
+1
+set_fix_multiple_port_nets -feedthroughs -outputs -constants -buffer_constants
+1
+set_fix_hold [all_clocks]
+1
+####check design####
+check_design  >  ./$RPT_DIR/check_design.log  
+check_timing  >  ./$RPT_DIR/check_timing.log 
+# clock gating
+set_clock_gating_style -max_fanout 10
+
+Current clock gating style....
+Sequential cell: latch
+Minimum bank bitwidth: 3
+Minimum bank bitwidth for enhanced clock gating: 6
+Maximum fanout: 10
+Setup time for clock gate: 0.000000
+Hold time for clock gate: 0.000000
+Clock gating circuitry (positive edge): and
+Clock gating circuitry (negative edge): or
+ Note: inverter between clock gating circuitry 
+       and (negative edge) register clock pin.
+Control point insertion: none
+Control signal for control point: scan_enable
+Observation point insertion: false
+Observation logic depth: 5
+1
+### Power Optimization
+# set_leakage_optimization true
+# set_dynamic_optimization true
+#### Synthesis all design ####
+# basic ------------
+compile_ultra  
+Information: Performing power optimization. (PWR-850)
+Analyzing: "/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db"
+Library analysis succeeded.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | U-2022.12-DWBB_202212.0 |     *     |
+| Licensed DW Building Blocks        | U-2022.12-DWBB_202212.0 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler WLM                                                               |
+| Comand Line  | compile_ultra                                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 6794                                   |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 4414                                   |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 1183                                   |
+| Number of Dont Touch Nets                               | 1                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -feedthroughs -constants -outputs      |
+|                                                         | -buffer_constants                      |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 66 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'FIR'
+
+Loaded alib file './alib-52/slow.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'FIR'
+Information: Added key list 'DesignWare' to design 'FIR'. (DDB-72)
+Information: The register 'dc_state_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ap_state_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: In design 'FIR', the register 'awready_r_reg' is removed because it is merged to 'wready_r_reg'. (OPT-1215)
+ Implement Synthetic for 'FIR'.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	C634260/A C634260/Y U386/A U386/Y U425/B0 U425/Y U428/A0 U428/Y U434/C U434/Y U435/B0 U435/Y U439/A0 U439/Y 
+Warning: Disabling timing arc between pins 'A' and 'Y' on cell 'C634260'
+         to break a timing loop. (OPT-314)
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+Information: The register 'pipelined_add_r1_reg[64]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[63]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[62]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[61]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[60]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[59]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[58]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[57]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[56]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[55]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[54]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[53]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[52]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[51]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[50]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[49]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[48]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[47]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[46]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[45]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[44]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[43]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[42]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[41]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[40]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[39]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[46]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[38]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[37]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[36]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[35]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[34]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[33]' will be removed. (OPT-1207)
+Information: The register 'pipelined_add_r1_reg[32]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[32]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[34]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[38]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[42]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[48]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[54]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[56]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[59]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[57]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[62]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[49]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[60]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[61]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[52]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[58]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[53]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[55]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[43]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[45]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[47]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[41]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[50]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[44]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[51]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[63]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[40]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[39]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[37]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[36]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[35]' will be removed. (OPT-1207)
+Information: The register 'pipelined_mul_r1_reg[33]' will be removed. (OPT-1207)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:02:35  322232.7      0.00      -0.0   34298.9                           296748960.0000      0.00  
+    0:02:36  321837.2      0.00       0.0   34298.9                           296504192.0000      0.00  
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:02:38  322332.9      0.00       0.0   34298.9                           297055616.0000      0.00  
+    0:02:39  322332.9      0.00       0.0   34298.9                           297055616.0000      0.00  
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Mapping 'FIR_DP_OP_1345_130_6391_4'
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:02:59  198575.4      1.07       9.9   32411.1                           174526304.0000      0.00  
+    0:03:01  199159.3      0.00       0.0   32426.2                           174988912.0000      0.00  
+    0:03:01  199159.3      0.00       0.0   32426.2                           174988912.0000      0.00  
+    0:03:01  199154.2      0.00       0.0   32426.2                           174991792.0000      0.00  
+Information: The register 'accum_out_cnt_r_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'accum_out_cnt_r_reg[8]' is a constant and will be removed. (OPT-1206)
+    0:03:05  197607.9      1.91      41.3   32781.5                           173511760.0000      0.00  
+    0:03:07  197528.1      1.91      41.3   32781.5                           173485232.0000      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+Information: The register 'accum_out_cnt_r_reg[7]' is a constant and will be removed. (OPT-1206)
+    0:03:16  195810.4      1.87      42.4   32701.8                           171656240.0000      0.00  
+    0:03:17  195549.0      0.00       0.0   32473.3                           171455840.0000      0.00  
+    0:03:17  195549.0      0.00       0.0   32473.3                           171455840.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:03:19  194359.1      0.00       0.0   32473.3                           170061440.0000      0.00  
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:03:24  194683.3      0.00       0.0       0.0                           170406160.0000      0.00  
+    0:03:24  194683.3      0.00       0.0       0.0                           170406160.0000      0.00  
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:03:24  194683.3      0.00       0.0       0.0                           170406160.0000      0.00  
+    0:03:24  194683.3      0.00       0.0       0.0                           170406160.0000      0.00  
+    0:03:24  194683.3      0.00       0.0       0.0                           170406160.0000      0.00  
+    0:03:24  194683.3      0.00       0.0       0.0                           170406160.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:26  194679.9      0.00       0.0       0.0                           169637232.0000      0.00  
+    0:03:27  194870.0      0.00       0.0       0.0                           169825376.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:03:29  194870.0      0.00       0.0       0.0                           169825376.0000      0.00  
+    0:03:33  191363.2      0.00       0.0       0.0                           163189360.0000      0.00  
+    0:03:33  191363.2      0.00       0.0       0.0                           163189360.0000      0.00  
+    0:03:33  191363.2      0.00       0.0       0.0                           163189360.0000      0.00  
+    0:03:35  191173.1      0.00       0.0       0.0                           162872736.0000      0.00  
+    0:03:39  190665.5      0.00       0.0       0.0                           162291744.0000      0.00  
+    0:03:39  190665.5      0.00       0.0       0.0                           162291744.0000      0.00  
+    0:03:39  190665.5      0.00       0.0       0.0                           162291744.0000      0.00  
+    0:03:39  190665.5      0.00       0.0       0.0                           162291744.0000      0.00  
+    0:03:40  190665.5      0.00       0.0       0.0                           162291744.0000      0.00  
+    0:03:40  190665.5      0.00       0.0       0.0                           162291744.0000      0.00  
+    0:03:47  189604.7      0.00       0.0       0.0                           161221872.0000      0.00  
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'FIR' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'axis_clk': 2305 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+## find more command in user guide 
+####--------------------------Netlist-related------------------------------------
+write -format ddc     -hierarchy -output ./$NET_DIR/${TOPLEVEL}_syn.ddc
+Writing ddc file './netlist/FIR_syn.ddc'.
+1
+write -format verilog -hierarchy -output ./$NET_DIR/${TOPLEVEL}_syn.v
+Writing verilog file '/home/raid7_2/user12/r2921075/HLS_SOC/Lab3_fir/syn/netlist/FIR_syn.v'.
+1
+write_sdf -version 1.0  -context verilog ./$NET_DIR/${TOPLEVEL}_syn.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/raid7_2/user12/r2921075/HLS_SOC/Lab3_fir/syn/netlist/FIR_syn.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+Warning: Design 'FIR' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Timing loop detected. (OPT-150)
+	U3146/A0 U3146/Y C634260/A C634260/Y U4105/B U4105/Y U3554/B U3554/Y U6232/B0 U6232/Y U3881/A U3881/Y U6234/B0 U6234/Y 
+Warning: Disabling timing arc between pins 'A' and 'Y' on cell 'C634260'
+         to break a timing loop. (OPT-314)
+1
+write_sdc ./$NET_DIR/${TOPLEVEL}_syn.sdc
+1
+# write_saif -output ./$NET_DIR/${TOPLEVEL}_syn.saif 
+##-------------------------------------------------------------------------
+####---------------------------Syntheis result reports----------------------------
+report_timing -delay max -max_paths 5 > ./$RPT_DIR/report_setup_${TOPLEVEL}.out
+report_timing -delay min -max_paths 5 > ./$RPT_DIR/report_hold_${TOPLEVEL}.out
+report_constraint -all_violators > ./$RPT_DIR/report_violation_${TOPLEVEL}.out
+report_area -hier  > ./$RPT_DIR/report_area_${TOPLEVEL}.out
+report_power -hier > ./$RPT_DIR/report_power_${TOPLEVEL}.out
+report_timing -path full -delay max -max_paths 10 -nworst 1 > ./$RPT_DIR/report_time_${TOPLEVEL}.out
+exit
+
+Memory usage for this session 1325 Mbytes.
+Memory usage for this session including child processes 1325 Mbytes.
+CPU usage for this session 480 seconds ( 0.13 hours ).
+Elapsed time for this session 497 seconds ( 0.14 hours ).
+
+Thank you...
