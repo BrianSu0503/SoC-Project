@@ -109,7 +109,8 @@ module fir #(
     localparam DC_Reuse = 3'd2;
     localparam DC_Read = 3'd3;
 
-   
+    wire [pDATA_WIDTH-1:0] DATA_LENGTH;
+    wire [pDATA_WIDTH-1:0] TAP_NUM;
     // State signal
     reg [3:0] ap_state;
     reg [3:0] ap_state_nxt;
@@ -187,11 +188,11 @@ module fir #(
     reg [pDATA_WIDTH:0] data_reuse_buf_w;
 
 //==============================================================ENGINE STATE TRANSITION============================================================================
-    // assign in_stall = (stream_in_data_cnt_r < Tape_Num) ? ((dataRAM_read_cnt_r == stream_in_data_cnt_r) ? 1'b1 : 1'b0)
-    //                                                 :((dataRAM_read_cnt_r == Tape_Num) ? 1'b1 : 1'b0);
+    // assign in_stall = (stream_in_data_cnt_r < TAP_NUM) ? ((dataRAM_read_cnt_r == stream_in_data_cnt_r) ? 1'b1 : 1'b0)
+    //                                                 :((dataRAM_read_cnt_r == TAP_NUM) ? 1'b1 : 1'b0);
     assign in_stall = (dc_state == DC_Read) & (dc_state_nxt == DC_Idle);
-    assign out_stall = (stream_out_data_cnt_r < Tape_Num) ? ((accum_in_cnt_r == (stream_out_data_cnt_r +  1'b1)) ? 1'b1 : 1'b0) 
-                         : ((accum_in_cnt_r == Tape_Num) ? 1'b1 : 1'b0);
+    assign out_stall = (stream_out_data_cnt_r < TAP_NUM) ? ((accum_in_cnt_r == (stream_out_data_cnt_r +  1'b1)) ? 1'b1 : 1'b0) 
+                         : ((accum_in_cnt_r == TAP_NUM) ? 1'b1 : 1'b0);
     always@(*)begin // State transition
       case(ap_state)
         CONF: begin
@@ -199,7 +200,7 @@ module fir #(
           else ap_state_nxt = CONF;
         end 
         STREAM: begin
-          if(sm_tvalid & sm_tready & (stream_out_data_cnt_r == (`Data_Num-1))) ap_state_nxt = DONE;
+          if(sm_tvalid & sm_tready & (stream_out_data_cnt_r == (DATA_LENGTH-1))) ap_state_nxt = DONE;
         //   else if(~input_buf_valid & in_stall & ~(ss_tvalid & ss_tready)) ap_state_nxt = STALL_I;
           else if(in_stall) ap_state_nxt = STALL_I;
           else if(output_buf_valid & out_stall & ~(sm_tvalid & sm_tready)) ap_state_nxt = STALL_O;
@@ -224,7 +225,11 @@ module fir #(
     end
  
 //---------------------------------------------------------------Configuration Register--------------------------------------------------------------------
-    assign config_end = `Param_Start + (Tape_Num << 2);// address of the last tap 
+
+    assign DATA_LENGTH = config_reg_r[12'h10>>2];
+    assign TAP_NUM = config_reg_r[12'h14>>2];
+
+    assign config_end = `Param_Start + (TAP_NUM << 2);// address of the last tap 
     assign ap_ctrl = config_reg_r[12'h00][2:0];
     assign config_en = (wready & awready & awvalid & wvalid)&(awaddr <= config_end);
     assign next_reg_val = (awaddr>>2 == 0) ? 
@@ -239,7 +244,7 @@ module fir #(
           for(i=(awaddr>>2)+1;i<(config_end)>>2;i=i+1) config_reg_w[i] = config_reg_r[i];
         end
         STREAM: begin
-          if(sm_tready & sm_tvalid & (stream_out_data_cnt_r == `Data_Num))begin// last data transmitted
+          if(sm_tready & sm_tvalid & (stream_out_data_cnt_r == DATA_LENGTH))begin// last data transmitted
             for(i=1;i<config_end>>2;i=i+1) config_reg_w[i] = config_reg_r[i];
             config_reg_w[12'h00] = {config_reg_r[12'h00][pDATA_WIDTH-1:2]
                                               , 1'b1, ap_ctrl[0]};// pull ap_done since last data transmitted
@@ -301,7 +306,7 @@ module fir #(
         end
         DC_Read: begin
           if(dc_state_nxt != DC_Read)begin
-            if(dc_read_cycle_r < (Tape_Num - 2'd3)) dc_read_cycle_w = dc_read_cycle_r + 1'b1;
+            if(dc_read_cycle_r < (TAP_NUM - 2'd3)) dc_read_cycle_w = dc_read_cycle_r + 1'b1;
             else dc_read_cycle_w = dc_read_cycle_r;
           end
           else dc_read_cycle_w = dc_read_cycle_r;
@@ -395,8 +400,8 @@ module fir #(
     end
     //------------------------tap address generator-----------------------------
     // wire tapRAM_rst;
-    // assign tapRAM_rst = (stream_in_data_cnt_r < Tape_Num) ? ((k == stream_in_data_cnt_r) ? 1'b1 : 1'b0)
-    //                                                :(k == Tape_Num) ? 1'b1 : 1'b0;
+    // assign tapRAM_rst = (stream_in_data_cnt_r < TAP_NUM) ? ((k == stream_in_data_cnt_r) ? 1'b1 : 1'b0)
+    //                                                :(k == TAP_NUM) ? 1'b1 : 1'b0;
     // assign tap_addr = k << 2;// 跳下個word
     
 
@@ -622,11 +627,11 @@ module fir #(
     always@(*)begin
       case(cal_state)
         Cal_Buf_Out: begin
-          if(accum_out_cnt_r < Tape_Num)begin
+          if(accum_out_cnt_r < TAP_NUM)begin
             if((accum_in_cnt_r == (accum_out_cnt_r))) add_input_sel = 1'b1; // ex: output 0筆資料共需進 accumulator 1次，所以加完1次才須重置
             else add_input_sel = 1'b0;
           end else begin
-                if(accum_in_cnt_r == (Tape_Num-1'b1)) add_input_sel = 1'b1;
+                if(accum_in_cnt_r == (TAP_NUM-1'b1)) add_input_sel = 1'b1;
                 else add_input_sel = 1'b0;
           end
         end
@@ -807,6 +812,6 @@ module fir #(
         
     //--------------AXI Stream interface(y[n])---------------
     assign sm_tvalid = output_buf_valid;
-    assign sm_tlast = sm_tready & sm_tvalid & (stream_out_data_cnt_w == `Data_Num); // buffer clear and last data transferred
+    assign sm_tlast = sm_tready & sm_tvalid & (stream_out_data_cnt_w == DATA_LENGTH); // buffer clear and last data transferred
     assign sm_tdata = out_buffer_r[pDATA_WIDTH-1:0]; // output last 32 bit of data
 endmodule
